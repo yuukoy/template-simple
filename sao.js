@@ -30,6 +30,11 @@ module.exports = {
       default: ':gitEmail:',
       store: true
     },
+    repo: {
+      message: 'What is repo of this project?',
+      default: ':gitEmail:',
+      store: true
+    },
     serverPort: {
       message: 'What port number would you use for development server?',
       default: '9901'
