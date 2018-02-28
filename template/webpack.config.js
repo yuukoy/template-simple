@@ -1,5 +1,5 @@
 module.exports = {
-  entry: './app/script/script.js',
+  entry: './<%= pathApp %>/script/script.js',
   output: {
     filename: './static/script/script.js'
   },

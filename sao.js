@@ -187,28 +187,28 @@ function generateIndexPagePath(context) {
 }
 
 function ensureParentsExist(filepath, {isRelativeToScript = false} = {}) {
-  const sep = path.sep;
+  const sep = path.sep
   const targetDir = path.dirname(filepath)
-  const initDir = path.isAbsolute(targetDir) ? sep : '';
-  const baseDir = isRelativeToScript ? __dirname : '.';
+  const initDir = path.isAbsolute(targetDir) ? sep : ''
+  const baseDir = isRelativeToScript ? __dirname : '.'
 
   targetDir.split(sep).reduce((parentDir, childDir) => {
-    const curDir = path.resolve(baseDir, parentDir, childDir);
+    const curDir = path.resolve(baseDir, parentDir, childDir)
     try {
-      fs.mkdirSync(curDir);
+      fs.mkdirSync(curDir)
     }
     catch (err) {
       if (err.code !== 'EEXIST') {
-        throw err;
+        throw err
       }
     }
 
-    return curDir;
-  }, initDir);
+    return curDir
+  }, initDir)
 }
 
 function createEmptyFile(filepath) {
-  fs.closeSync(fs.openSync(filepath, 'a'));
+  fs.closeSync(fs.openSync(filepath, 'a'))
 }
 
 function createDefaultView(context) {
