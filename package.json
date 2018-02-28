@@ -1,0 +1,12 @@
+{
+  "name": "template-simple",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:yuukoy/template-simple.git",
+  "author": "Yuuko Yonemura <yuuko.yonemura@protonmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "sao": "^0.22.14"
+  }
+}
