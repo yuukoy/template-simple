@@ -7,10 +7,14 @@ createConfigurator({
   indexPageTemplateEngine: '<%= indexTemplateEngine %>',
   templateEngine: '<%= viewTemplateEngine %>',
   useStyle: <%= useStyle %>,
+  <% if (useStyle) { %>
   cssPreprocessor: '<%= cssPreprocessor %>',
+  <% } %>
   useScript: <%= useScript %>,
+  <% if (useScript) { %>
   bundler: '<%= bundler %>',
-  <% if (bundler === 'webpack') { %>
+  <% } %>
+  <% if (useScript && bundler === 'webpack') { %>
   webpackConfig: require('<%= pathWebpackConfig %>'),
   <% } %>
   useBrowserSync: <%= useBrowserSync %>,

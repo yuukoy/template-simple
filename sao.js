@@ -148,10 +148,18 @@ module.exports = {
 }
 
 function createFiles(context) {
+  let answers = context.answers
+  
   createIndexPage(context)
   createDefaultView(context)
-  createDefaultStyle(context)
-  createDefaultScript(context)
+
+  if (answers.useStyle) {
+    createDefaultStyle(context)
+  }
+
+  if (answers.useScript) {
+    createDefaultScript(context)
+  }
 }
 
 function createIndexPage(context) {
